@@ -1,0 +1,1 @@
+NETHERWORLD =  ["Aristrar", "Barthorog", "Dashuraun", "Faenorch", "Felazeal", "Hasderath", "Kadmokeen", "Kalagoth", "Lashgorok", "Mazdorkar", "Mizamanth", "Nastasu", "Nurazcoroth", "Pratorayth", "Qualaban", "Raqnarmax", "Thrykantor", "Uthmenor", "Xexorel", "Yurirak"]
