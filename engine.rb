@@ -82,13 +82,13 @@ def gen_char()
   else
   end
 
-  puts "Appearance:  #{APPEARANCES.sample}."
-  puts "Backstory:   #{HISTORIES.sample}."
-  puts "Personality: #{PERSONALITY.sample}."
-  puts "Flaws:       #{FLAWS.sample}.\n"
+  puts "LOOKS:  #{APPEARANCES.sample}."
+  puts "STORY:  #{HISTORIES.sample}."
+  puts "CHARM:  #{PERSONALITY.sample}."
+  puts "FLAWS:  #{FLAWS.sample}.\n"
 
-  STAT_BLOCK.each do |key, value|
-    puts "#{key}: #{value}"
+  STAT_BLOCK.each do |stat, value|
+    puts "#{stat}: #{value}"
   end
 end
 
