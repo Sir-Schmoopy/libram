@@ -1,4 +1,4 @@
-# Hey, friend!
+# Hey, Buddy!
 
 ## This whole thing is meant as an exercise in Ruby and hopefully it'll become a genuinely useful thing for DMing on-the-fly content
 
