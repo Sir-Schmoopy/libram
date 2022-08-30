@@ -2,7 +2,7 @@
 
 ## This whole thing is meant as an exercise in Ruby and hopefully it'll become a genuinely useful thing for DMing on-the-fly content
 
-#### This project has a lot of lists from the `Libram of Lists` kickstarter and some other content I added because I thought it would be fun to include.
+This project has a lot of lists from the `Libram of Lists` kickstarter and some other content I added because I thought it would be fun to include.
 
 Right now it only functions as a CLI way of generating random content as needed, which isn't great. But the hope is to make a site that'll be useful for this stuff.
 
