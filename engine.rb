@@ -23,7 +23,7 @@ def humon()
   puts "1) Humanoid"
   puts "2) Monster"
   puts "3) Shut up and give me a name already!"
-  puts "> "
+  print "> "
   chartype = $stdin.gets.downcase.chomp
   if chartype.include?("hu") | chartype.include?("1")
     humanoid()
@@ -37,28 +37,28 @@ def humon()
   end
 end
 
-# class Character
+# Can I make these a `Character` class?
 
-  def humanoid
-    Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
-      require file
-    end
+def humanoid
+  Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
+    require file
+  end
   puts "Ok, we can make a character. What's the characters race?"
   print "> "
   race = $stdin.gets.downcase.chomp
 
-    puts "Awesome! Weird question, but are they a pirate or a noble and if so, which?"
-    print "> "
-    piroble = $stdin.gets.downcase.chomp
-    if piroble.include?("pirate")
-      pirate = true
-    elsif piroble.include?("noble")
-      noble = true
-    else
-      puts "Okay, cool, just checking."
-    end
+  puts "Awesome! Weird question, but are they a pirate or a noble and if so, which?"
+  print "> "
+  piroble = $stdin.gets.downcase.chomp
+  if piroble.include?("pirate")
+    pirate = true
+  elsif piroble.include?("noble")
+    noble = true
+  else
+    puts "Okay, cool, just checking."
+  end
 
-  if race.include?("dragonborn")    #these lines are referencing arrays in /lists/names/chars/races.rb
+  if race.include?("dragonborn") #these lines are referencing arrays in /lists/names/chars/races.rb
     gen_dragonborn()
   elsif race.include?("dwarf") | race.include?("dwarv")
     gen_dwarf()
@@ -94,27 +94,30 @@ end
   STAT_BLOCK.each do |stat, value|
     puts "#{stat}: #{value}"
   end
+end
 
   def monster()
+    Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
+      require file
+    end
     puts "Sure, what kinda monster are we looking at?"
     puts "1) Dragon"
     puts "2) Giant"
     puts "3) Demons/Devils"
-    puts "4) Undead (Vamp/Lich/DK)"
-    puts "> "
+    puts "4) Undead (Vamp/Lich/etc.)"
+    print "> "
     mon_type = $stdin.gets.downcase.chomp
-    
-    if mon_type.include?({"dragon"}) | mon_type.include?("1")
-      dragon()
+
+    if mon_type.include?("dragon") | mon_type.include?("1")
+      gen_dragon()
     elsif mon_type.include?("giant") | mon_type.include?("2")
-      giant()
+      gen_giant()
     elsif mon_type.include?("demon") | mon_type.include?("devil") | mon_type.include?("3")
-      devil()
-    elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("death") | mon_type.include?("4")
-      undead()
-    else puts "Didn't quite get that, try again?" 
+      gen_devil()
+    elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("4")
+      gen_undead()
+    else puts "Didn't quite get that, try again?"
       monster()
-    end
   end
 end
 
