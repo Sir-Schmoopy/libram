@@ -7,7 +7,7 @@ def start()
   input = $stdin.gets.downcase.chomp
 
   if input.include?("char") | input.include?("1")
-    gen_char()
+    humon()
   elsif input.include?("place") | input.include?("2")
     gen_place()
   elsif input.include?("thing") | input.include?("3")
@@ -16,29 +16,47 @@ def start()
   end
 end
 
-def gen_char()
-  Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
-    require file
+#Let's filter out the character options a bit further
+def humon()
+  # require Character
+  puts "OK, What kind?"
+  puts "1) Humanoid"
+  puts "2) Monster"
+  puts "3) Shut up and give me a name already!"
+  puts "> "
+  chartype = $stdin.gets.downcase.chomp
+  if chartype.include?("hu") | chartype.include?("1")
+    humanoid()
+  elsif chartype.include?("mon") | chartype.include?("2")
+    monster()
+  elsif chartype.include?("shu") | chartype.include?("3")
+    #it should give a random name
+  else
+    puts "idk what I'm supposed to do with that."
+    humon()
   end
+end
 
+# class Character
+
+  def humanoid
+    Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
+      require file
+    end
   puts "Ok, we can make a character. What's the characters race?"
   print "> "
   race = $stdin.gets.downcase.chomp
 
-  puts "Awesome! Weird question, but are they a pirate or a noble and if so, which?"
-  print "> "
-  piroble = $stdin.gets.downcase.chomp
-  if piroble.include?("pirate")
-    pirate = true
-  elsif piroble.include?("noble")
-    noble = true
-  else
-    puts "Okay, cool, just checking."
-  end
-
-  # puts "Do you need some basic stats?"
-  # print "> "
-  # stats = $stdin.gets.downcase.chomp
+    puts "Awesome! Weird question, but are they a pirate or a noble and if so, which?"
+    print "> "
+    piroble = $stdin.gets.downcase.chomp
+    if piroble.include?("pirate")
+      pirate = true
+    elsif piroble.include?("noble")
+      noble = true
+    else
+      puts "Okay, cool, just checking."
+    end
 
   if race.include?("dragonborn")    #these lines are referencing arrays in /lists/names/chars/races.rb
     gen_dragonborn()
@@ -58,22 +76,8 @@ def gen_char()
     gen_orc()
   elsif race.include?("tiefling")
     gen_tiefling()
-  else puts "TRY AGAIN, MAYBE?"
-    puts "          ██████████         "
-    puts "      ████▒▒▒▒▒▒▒▒▒▒████     "
-    puts "    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██   "
-    puts "  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██ "
-    puts "  ██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██ "
-    puts "██▒▒▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒█"
-    puts "██▒▒▒▒▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒█"
-    puts "██▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒█"
-    puts "██▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒█"
-    puts "██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█"
-    puts "  ██▒▒▒▒▒▒▒▒██████▒▒▒▒▒▒▒▒██ "
-    puts "  ██▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒██ "
-    puts "    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██   "
-    puts "      ████▒▒▒▒▒▒▒▒▒▒████     "
-    puts "          ██████████    "   end
+  else puts "Sorry, don't know that one."
+  end
 
   if pirate == true
     puts "Their pirate name is #{PIRATE_NAME.sample} \n"
@@ -90,6 +94,28 @@ def gen_char()
   STAT_BLOCK.each do |stat, value|
     puts "#{stat}: #{value}"
   end
+
+  def monster()
+    puts "Sure, what kinda monster are we looking at?"
+    puts "1) Dragon"
+    puts "2) Giant"
+    puts "3) Demons/Devils"
+    puts "4) Undead (Vamp/Lich/DK)"
+    puts "> "
+    mon_type = $stdin.gets.downcase.chomp
+    
+    if mon_type.include?({"dragon"}) | mon_type.include?("1")
+      dragon()
+    elsif mon_type.include?("giant") | mon_type.include?("2")
+      giant()
+    elsif mon_type.include?("demon") | mon_type.include?("devil") | mon_type.include?("3")
+      devil()
+    elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("death") | mon_type.include?("4")
+      undead()
+    else puts "Didn't quite get that, try again?" 
+      monster()
+    end
+  end
 end
 
 def gen_place
@@ -99,3 +125,4 @@ def gen_thing
 end
 
 start()
+# it should have the option to save characters that you like!
