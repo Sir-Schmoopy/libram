@@ -9,3 +9,5 @@ Right now it only functions as a CLI way of generating random content as needed,
 When using tables and lists, my preference is a 50/50 split between rolling and specifically choosing what I believe will work best for my current objective. Which sometimes means rolling repeatedly until I get a result to my liking.
 
 You can navigate to the tables if you want to be choosy, but right now you can use the `engine.rb` to roll most of what you might need in a (hopefully) quicker fashion.
+
+use 'plz' in the command line to get instant outputs. 

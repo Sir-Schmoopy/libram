@@ -45,7 +45,39 @@ def humanoid
   end
   puts "Ok, we can make a character. What's the characters race?"
   print "> "
-  race = $stdin.gets.downcase.chomp
+  while valid = true
+    race = $stdin.gets.downcase.chomp
+    if race.include?("dragonborn") #these lines are referencing arrays in /lists/names/chars/races.rb
+      gen_dragonborn()
+    elsif race.include?("dwarf") | race.include?("dwarv")
+      gen_dwarf()
+      break
+    elsif race.include?("elf") | race.include?("elv")
+      gen_elf()
+      break
+    elsif race.include?("fae")
+      gen_fae()
+      break
+    elsif race.include?("gnom")
+      gen_gnome()
+      break
+    elsif race.include?("halfling")
+      gen_halfling()
+      break
+    elsif race.include?("human")
+      gen_human()
+      break
+    elsif race.include?("orc")
+      gen_orc()
+      break
+    elsif race.include?("tiefling")
+      gen_tiefling()
+      break
+    else valid = false
+      puts "Sorry, don't know that one. What's the character's race?"
+      print "> "
+    end
+  end
 
   puts "Awesome! Weird question, but are they a pirate or a noble and if so, which?"
   print "> "
@@ -58,41 +90,27 @@ def humanoid
     puts "Okay, cool, just checking."
   end
 
-  if race.include?("dragonborn") #these lines are referencing arrays in /lists/names/chars/races.rb
-    gen_dragonborn()
-  elsif race.include?("dwarf") | race.include?("dwarv")
-    gen_dwarf()
-  elsif race.include?("elf") | race.include?("elv")
-    gen_elf()
-  elsif race.include?("fae")
-    gen_fae()
-  elsif race.include?("gnom")
-    gen_gnome()
-  elsif race.include?("halfling")
-    gen_halfling()
-  elsif race.include?("human")
-    gen_human()
-  elsif race.include?("orc")
-    gen_orc()
-  elsif race.include?("tiefling")
-    gen_tiefling()
-  else puts "Sorry, don't know that one."
-  end
-
   if pirate == true
-    puts "Their pirate name is #{PIRATE_NAME.sample} \n"
+    pirate_name = "Their pirate name is #{PIRATE_NAME.sample} \n"
   elsif noble == true
-    puts "Their noble name is #{RULER_NAME.sample} \n"
+    noble_name = "Their noble name is #{RULER_NAME.sample} \n"
   else
   end
 
-  puts "LOOKS:  #{APPEARANCES.sample}."
-  puts "STORY:  #{HISTORIES.sample}."
-  puts "CHARM:  #{PERSONALITY.sample}."
-  puts "FLAWS:  #{FLAWS.sample}.\n"
+  # The Magic Output
+  # Sam I'm so sorry about the global.
+  # Definitely a thing I want to figure out how to scrub
+  # Out of this thing eventually. 
+
+  puts
+  puts $CHAR_NAME
+  puts "LOOKS: #{APPEARANCES.sample}."
+  puts "STORY: #{HISTORIES.sample}."
+  puts "CHARM: #{PERSONALITY.sample}."
+  puts "FLAWS: #{FLAWS.sample}.\n"
 
   STAT_BLOCK.each do |stat, value|
-    puts "#{stat}: #{value}"
+    puts "#{stat}:   #{value}"
   end
 end
 

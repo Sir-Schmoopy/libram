@@ -1,0 +1,23 @@
+districts = ["Arena/Coliseum area", "Caravan grounds", "Castle/Keep and grounds", "Civic/Government section", "College/University grounds", "Embassy district", "Fine shopping district", "Garrison/Military base", "Ghetto (racially or spiritually divided, Elven, Gnome, Zeus worshipers, etc.)", "Guildhall district", "Inn/Public House/Tavern area", "Magic/Wizard tower district", "Manor lands", "Marketplace", "Necropolis", "Noble's Quarters", "Old Town (first area settled)", "Park", "Prison", "Red-light district", "Residential (Poor, Average, Wealthy) 􏰧 Shanty town", "Slave quarters", "Slums", "Tannery row", "Temple district", "Theater/Entertainment district", "Undercity", "Warehouse district", "Waterfront"]
+governments = {
+  Anarchy => "The king died with no heir, nine warlords vie for control while the people live in desperation, hoping for a savior."
+  Autocracy => "A half-elf has ruled the lands as King for more than a century now, his human father long-since passed, and his dark elf mother holds his ear."
+  Confederacy => "Six cities and ten towns govern themselves, and work as a whole, for the good of all (some being more equal than others)"
+  Despotism => "The Nightingale Lady, a virtuosic Bard, controls the motherland through her magic and influence, all who oppose her are relegated to oblivion."
+  Dyarchy => "Twin Daughters of the King, now rule together through intrigue and manipulation."
+  Geriatocracy => "Township is ruled by the eldest of the five noble families, control changing quickly at times."
+  Magocracy => "The Council of the Covenant, rules over the city state fairly, and makes ample use of magic."
+  Matriarchy => "Old wise women rule, the land and people prosper as long as the proper rituals are conducted."
+  Militocracy => "A Supreme General rules with an iron hand, and the military is involved with all public and private affairs."
+  Monarchy => "The young benevolent Queen rules over the lands providing a wonderful life to all, but something lurks in the shadows at court."
+  Necrocratic => "An all-powerful Mummy Lord rules over this desert kingdom, a Death Knight at its side, with legions of skeletal troops. The terrified living across the lands are kept slavishly working, and provide more skeletons by the year."
+  Oligarchy => "The Savant Seven machinate and scheme against each other, while the realm carries on obliviously."
+  Patriarchy => "The benevolent leader's health is failing, prophecies say the land will fail with him, and it has already started."
+  Pedocracy => "Assembly of Elders rule over the city-state with extraordinary gridlock, all decisions are made at a glacial pace, taking ages to research, discuss and implement."
+  Plutocracy => "Free state ruled by a congress of the twenty wealthiest famil􏰋􏰄􏰃􏰒 representatives, providing a surprisingly fair and safe life for all."
+  Regency => "The young king is insane, and his regents vie for control while his uncle plots his death."
+  Satrapy => "The cousin of the Queen controls this land and its people after the war of the Bright Steppes."
+  Syndicracy => "Nearly a failed state, the lands are fraught with intrigue, poverty, and abuse, as competing guilds squabble over increasingly sparce resources."
+  Theocracy => "All bow before the Hierophant, and her divine connection with the goddess of fate."
+  Triumvirate => "The Minister of Security bullies the other two Ministers of the State and Foreign Affairs into _jointly_ deciding the path of the nation."
+}
