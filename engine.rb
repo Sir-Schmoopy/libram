@@ -1,3 +1,10 @@
+Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
+  require file
+end
+Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
+  require file
+end
+
 def start()
   puts "Watchuwant?"
   puts "1) A character"
@@ -18,7 +25,6 @@ end
 
 #Let's filter out the character options a bit further
 def humon()
-  # require Character
   puts "OK, What kind?"
   puts "1) Humanoid"
   puts "2) Monster"
@@ -33,49 +39,45 @@ def humon()
     #it should give a random name
   else
     puts "idk what I'm supposed to do with that."
-    humon()
+    humon() # Sorry
   end
 end
 
-# Can I make these a `Character` class?
-
 def humanoid
-  Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
-    require file
-  end
   puts "Ok, we can make a character. What's the characters race?"
   print "> "
-  while valid = true
-    race = $stdin.gets.downcase.chomp
-    if race.include?("dragonborn") #these lines are referencing arrays in /lists/names/chars/races.rb
+  loop do    
+    answer = $stdin.gets.downcase.chomp
+    if answer.include?("dragonborn")
       gen_dragonborn()
-    elsif race.include?("dwarf") | race.include?("dwarv")
+      break
+    elsif answer.include?("dwarf") | answer.include?("dwarv")
       gen_dwarf()
       break
-    elsif race.include?("elf") | race.include?("elv")
+    elsif answer.include?("elf") | answer.include?("elv")
       gen_elf()
       break
-    elsif race.include?("fae")
+    elsif answer.include?("fae")
       gen_fae()
       break
-    elsif race.include?("gnom")
+    elsif answer.include?("gnom")
       gen_gnome()
       break
-    elsif race.include?("halfling")
+    elsif answer.include?("halfling")
       gen_halfling()
       break
-    elsif race.include?("human")
+    elsif answer.include?("human")
       gen_human()
       break
-    elsif race.include?("orc")
+    elsif answer.include?("orc")
       gen_orc()
       break
-    elsif race.include?("tiefling")
+    elsif answer.include?("tiefling")
       gen_tiefling()
       break
-    else valid = false
+    else 
       puts "Sorry, don't know that one. What's the character's race?"
-      print "> "
+      print "> "     
     end
   end
 
@@ -100,8 +102,8 @@ def humanoid
   # The Magic Output
   # Sam I'm so sorry about the global.
   # Definitely a thing I want to figure out how to scrub
-  # Out of this thing eventually. 
-
+  # Out of this thing eventually.
+  # set this to a variable to save it somewhere
   puts
   puts $CHAR_NAME
   puts "LOOKS: #{APPEARANCES.sample}."
@@ -114,28 +116,25 @@ def humanoid
   end
 end
 
-  def monster()
-    Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
-      require file
-    end
-    puts "Sure, what kinda monster are we looking at?"
-    puts "1) Dragon"
-    puts "2) Giant"
-    puts "3) Demons/Devils"
-    puts "4) Undead (Vamp/Lich/etc.)"
-    print "> "
-    mon_type = $stdin.gets.downcase.chomp
+def monster()
+  puts "Sure, what kinda monster are we looking at?"
+  puts "1) Dragon"
+  puts "2) Giant"
+  puts "3) Demons/Devils"
+  puts "4) Undead (Vamp/Lich/etc.)"
+  print "> "
+  mon_type = $stdin.gets.downcase.chomp
 
-    if mon_type.include?("dragon") | mon_type.include?("1")
-      gen_dragon()
-    elsif mon_type.include?("giant") | mon_type.include?("2")
-      gen_giant()
-    elsif mon_type.include?("demon") | mon_type.include?("devil") | mon_type.include?("3")
-      gen_devil()
-    elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("4")
-      gen_undead()
-    else puts "Didn't quite get that, try again?"
-      monster()
+  if mon_type.include?("dragon") | mon_type.include?("1")
+    gen_dragon()
+  elsif mon_type.include?("giant") | mon_type.include?("2")
+    gen_giant()
+  elsif mon_type.include?("demon") | mon_type.include?("devil") | mon_type.include?("3")
+    gen_devil()
+  elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("4")
+    gen_undead()
+  else puts "Didn't quite get that, try again?"
+    monster()   
   end
 end
 

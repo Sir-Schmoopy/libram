@@ -1,116 +1,56 @@
-def gen_dragonborn()
+def gen_whatever(female, male, surname)
   puts "What's the character's gender?"
   print "> "
   gender = $stdin.gets.downcase.chomp
   if gender.include?("f")
-   $CHAR_NAME = "Their name is #{DRAGONBORN_FEMALE.sample} #{DRAGONBORN_SURNAME.sample}.\n"
+   $CHAR_NAME = "Their name is #{female.sample} #{surname.sample}.\n"
   elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{DRAGONBORN_MALE.sample} #{DRAGONBORN_SURNAME.sample}.\n"
+   $CHAR_NAME = "Their name is #{male.sample} #{surname.sample}.\n"
   else
    puts "Try again, please."
+  end
+end
+
+def gen_dragonborn()
+  gen_whatever(DRAGONBORN_FEMALE, DRAGONBORN_MALE, DRAGONBORN_SURNAME)
   end
 end
 
 def gen_dwarf()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{DWARVEN_FEMALE.sample} #{DWARVEN_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{DWARVEN_MALE.sample} #{DWARVEN_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(DWARVEN_FEMALE, DWARVEN_MALE, DWARVEN_SURNAME)
   end
 end
 
 def gen_elf()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{ELVEN_FEMALE.sample} #{ELVEN_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{ELVEN_MALE.sample} #{ELVEN_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(ELVEN_FEMALE, ELVEN_MALE, ELVEN_SURNAME)
   end
 end
 
 def gen_fae()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{FAE_FEMALE.sample} #{FAE_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{FAE_MALE.sample} #{FAE_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(FAE_FEMALE, FAE_MALE, FAE_SURNAME)
   end
 end
 
 def gen_gnome()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{GNOMISH_FEMALE.sample} #{GNOMISH_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{GNOMISH_MALE.sample} #{GNOMISH_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(GNOMISH_FEMALE, GNOMISH_MALE, GNOMISH_SURNAME)
   end
 end
 
-def gen_halfling()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{HALFLING_FEMALE.sample} #{HALFLING_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{HALFLING_MALE.sample} #{HALFLING_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+def gen_halfling(HALFLING_FEMALE, HALFLING_MALE, HALFLING_SURNAME)
+  gen_whatever()
   end
 end
 
 def gen_human()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{HUMAN_FEMALE.sample} #{HUMAN_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{HUMAN_MALE.sample} #{HUMAN_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(HUMAN_FEMALE, HUMAN_MALE, HUMAN_SURNAME)
   end
 end
 
 def gen_orc()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{ORCISH_FEMALE.sample} #{ORCISH_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{ORCISH_MALE.sample} #{ORCISH_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
+  gen_whatever(ORCISH_FEMALE, ORCISH_MALE, ORCISH_SURNAME)
   end
 end
 
 def gen_tiefling()
-  puts "What's the character's gender?"
-  print "> "
-  gender = $stdin.gets.downcase.chomp
-  if gender.include?("f")
-   $CHAR_NAME = "Their name is #{TIEFLING_FEMALE.sample} #{TIEFLING_SURNAME.sample}.\n"
-  elsif gender.include?("male")
-   $CHAR_NAME = "Their name is #{TIEFLING_MALE.sample} #{TIEFLING_SURNAME.sample}.\n"
-  else
-   puts "Try again, please."
-  end
+  gen_whatever(TIEFLING_MALE, TIEFLING_FEMALE, TIEFLING_SURNAME)
 end
