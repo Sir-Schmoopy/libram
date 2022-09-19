@@ -1,10 +1,3 @@
-Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
-  require file
-end
-Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
-  require file
-end
-
 def start()
   puts "Watchuwant?"
   puts "1) A character"
@@ -44,6 +37,10 @@ def humon()
 end
 
 def humanoid
+  Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |file|
+    require file
+  end
+
   puts "Ok, we can make a character. What's the characters race?"
   print "> "
   loop do    
@@ -117,6 +114,10 @@ def humanoid
 end
 
 def monster()
+  Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
+    require file
+  end
+  
   puts "Sure, what kinda monster are we looking at?"
   puts "1) Dragon"
   puts "2) Giant"

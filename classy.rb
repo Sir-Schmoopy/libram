@@ -34,8 +34,7 @@ TIEFLING_SURNAME = ["Agathon", "Alban", "Audsley", "Borgun", "Bridson", "Bronkho
 
 
 
-module NPC_Generator
-    
+class NPC
   def gen_dragonborn()
     puts "What's the character's gender?"
       gender = $stdin.gets.downcase.chomp
