@@ -17,7 +17,7 @@ end
 
 def start()
 
-  input = choice("watchuwant", ["character", "place", "thing"])
+  input = choice("What do you need made?", ["character", "place", "thing"])
 
   if input.include?("char") | input.include?("1")
     humon()
@@ -32,14 +32,12 @@ end
 #Let's filter out the character options a bit further
 def humon()
 
-  chartype = choice("watchuwant", ["Humanoid", "Monster", "Shut up name now"])
+  chartype = choice("Sure thing, what kind of character?", ["Humanoid", "Monster"])
 
   if chartype.include?("hu") | chartype.include?("1")
     humanoid()
   elsif chartype.include?("mon") | chartype.include?("2")
     monster()
-  elsif chartype.include?("shu") | chartype.include?("3")
-    #it should give a random name
   else
     puts "idk what I'm supposed to do with that."
     humon() # Sorry
@@ -55,18 +53,18 @@ def humanoid
   print "> "
   loop do    
     answer = $stdin.gets.downcase.chomp
-    race = \
+    race_name = \
       case answer
-      when /dwar[fv]/   then "dwarf"
-      when /el[fv]/     then "elf"
-      when /gnom/       then "gnome"
+      when /dwar[fv]/   then "dwarven"
+      when /el[fv]/     then "elven"
+      when /gnom/       then "gnomish"
       when "dragonborn", "fae", "halfling", "human", "orc", "tiefling"
         answer
       else nil
         puts "try again"
       end
-    if race 
-      send("gen_#{race}")
+    if race_name 
+      gen_race_by_name(race_name)
       break
     end
   end
@@ -76,18 +74,11 @@ def humanoid
   print "> "
   piroble = $stdin.gets.downcase.chomp
   if piroble.include?("pirate")
-    pirate = true
-  elsif piroble.include?("noble")
-    noble = true
-  else
-    puts "Okay, cool, just checking."
-  end
-
-  if pirate == true
     pirate_name = "Their pirate name is #{PIRATE_NAME.sample} \n"
-  elsif noble == true
+  elsif piroble.include?("noble")
     noble_name = "Their noble name is #{RULER_NAME.sample} \n"
   else
+    puts "Okay, cool, just checking."
   end
 
   # The Magic Output
@@ -97,6 +88,8 @@ def humanoid
   # set this to a variable to save it somewhere
   puts
   puts $CHAR_NAME
+  puts pirate_name if pirate_name
+  puts noble_name if noble_name
   puts "LOOKS: #{APPEARANCES.sample}."
   puts "STORY: #{HISTORIES.sample}."
   puts "CHARM: #{PERSONALITY.sample}."

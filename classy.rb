@@ -16,8 +16,8 @@ Dir.glob(File.expand_path("../lists/names/characters/*", __FILE__)).each do |fil
 end
 
 class NPC
-  attr_accessor :female_first, :male_first, :surname, :stats
-  def initialize(female, male, surname, stats)
+  attr_accessor :race :female_first, :male_first, :surname, :stats
+  def initialize(race, female, male, surname, stats)
     @female_first = female
     @male_first = male
     @surname = surname
