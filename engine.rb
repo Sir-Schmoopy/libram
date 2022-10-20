@@ -31,7 +31,6 @@ end
 
 #Let's filter out the character options a bit further
 def humon()
-
   chartype = choice("Sure thing, what kind of character?", ["Humanoid", "Monster"])
 
   if chartype.include?("hu") | chartype.include?("1")
@@ -104,27 +103,28 @@ def monster()
   Dir.glob(File.expand_path("../lists/names/monsters/*", __FILE__)).each do |file|
     require file
   end
-  
-  puts "Sure, what kinda monster are we looking at?"
-  puts "1) Dragon"
-  puts "2) Giant"
-  puts "3) Demons/Devils"
-  puts "4) Undead (Vamp/Lich/etc.)"
-  print "> "
-  mon_type = $stdin.gets.downcase.chomp
-
-  if mon_type.include?("dragon") | mon_type.include?("1")
-    gen_dragon()
-  elsif mon_type.include?("giant") | mon_type.include?("2")
-    gen_giant()
-  elsif mon_type.include?("demon") | mon_type.include?("devil") | mon_type.include?("3")
-    gen_devil()
-  elsif mon_type.include?("undead") | mon_type.include?("vamp") | mon_type.include?("lich") | mon_type.include?("4")
-    gen_undead()
-  else puts "Didn't quite get that, try again?"
-    monster()   
+    puts "What kind of monster?"
+    puts "1) Dragon"
+    puts "2) Giant"
+    puts "3) Demon/Devil"
+    puts "4) Undead"
+    print "> "
+    loop do
+      monster_type = $stdin.gets.downcase.chomp
+      monster_name = \
+        case monster_type
+        when /demon|devil/ then "netherworld"  
+        when "dragon", "giant", "undead"
+          monster_type
+        else nil
+          puts "Try again."
+        end
+      if monster_name
+        gen_monster_by_monster_type(monster_type)
+      break
+      end
+    end
   end
-end
 
 def gen_place
 end

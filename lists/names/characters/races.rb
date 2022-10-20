@@ -38,8 +38,12 @@ ORC = {
   :FEMALE => ["Aleqa", "Amozura", "Braatiz", "Bur-ra", "Cormona", "Dozira", "Ekalemi", "Falatuge", "Gara", "Gir-ree", "Halla", "Hembra", "Jutta", "Ketamyra", "Klaz-tih", "Larzy", "Myurr", "Nehfah", "Pariti", "Rada", "Ragna", "Rei-soh", "Sanarix", "Slurag", "Sokol", "Tarja", "Torda", "Unnur", "Viveros", "Wah-yeeh",],
   :SURNAME => ["Angstrong", "Axadorn", "Bloodaxe", "Boachan", "Bonesplitx", "Chorkath", "Croshdok", "Dirgloom", "Drodranon", "Exidoth", "Fallonkar", "Frostmalice", "Gidosk", "Horshkirk", "Houmkargen", "Jadadoon", "Kagg", "Kalagor", "Krankort", "Lumstus", "Mattockson", "Medhonach", "Nailstotor", "Orgotar", "Plowsplit", "Ragesworn", "Rathskull", "Redfang", "Shumolk", "Skules", "Smashstone", "Stratchan", "Taurbull", "Temagurn", "Uthalghud", "Vhidjar", "Wartooth", "Yangutt", "Zerksfist", "Zkirving",],
 }
-TIEFLING ={
+TIEFLING = {
   :MALE => ["Antonon", "Aristou", "Arxez", "Azion", "Barvius", "Cemil", "Closmir", "Demadius", "Dymian", "Erikos", "Ferroz", "Gondaxus", "Heiligen", "Helliar", "Iamut", "Kasen", "Kolstad ", "Leonys ", "Masek", "Meikle", "Nychol ", "Parus", "Relenus ", "Ryves", "Sarnox", "Skaer", "Thymakas ", "Vosilius ", "Xantch ", "Zarrius",],
   :FEMALE => ["Allyra", "Angourie", "Ascania", "Bilotta", "Charania", "Degala", "Dygrea", "Eilika", "Getheta", "Gissell", "Hicria", "Iona", "Jalluna", "Kalhalah", "Kebisa", "Lavtari", "Mhealhasta ", "Nalmione ", "Nemissa ", "Pryseis", "Quelaia", "Rarcissa ", "Sitara", "Swonae", "Tiziana", "Uynarey ", "Vasilios", "Xotori", "Zailvari", "Zirianna",],
   :SURNAME => ["Agathon", "Alban", "Audsley", "Borgun", "Bridson", "Bronkhorst", "Brundage", "Canthar", "Dallan", "Essen", "Farthing", "Grayden", "Grenrohm", "Halonen", "Handrich", "Haraldsen", "Jaldeer", "Karstadt", "Kierman", "Krellith", "Langenhorn", "Lewthwaite", "Maler", "Marston", "Monroy", "Morriche", "Nasmyth", "Ormdrad", "Pholgren", "Platen", "Quilliam", "Raeburn", "Ravenov", "Shanorth", "Thulesh", "Trentain", "Urnst", "Uthorn", "Wardlaw", "Wentide",],
+}
+TABAXI = {
+  :NAME => ["Piece of the Puzzle (Puzzle)", "Forgotten Button (Button)", "Cloud on the Mountaintop", "Five Timber(Timber)", "Jade Shoe", "Left-Handed Hummingbird(Bird)", "Seven Thundercloud(Thunder)", "Skirt of Snakes(Snake)", "Smoking Mirror(Smoke)"],
+  :CLAN => ["Bright Cliffs", "Distant Rain", "Mountain Tree", "Rumbling River", "Snoring Mountain", ]
 }

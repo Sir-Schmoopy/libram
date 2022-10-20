@@ -1,15 +1,12 @@
-def gen_dragon()
-  puts "What kind of dragon?"
+def gen_monster(monster_type)
+  if monster_type = "DRAGON"
+    puts "What color?"
+    color = stdin.gets.upcase.chomp
+    puts = "It's name is #{DRAGON_COLOR.sample}.\n"
+  end
 end
 
-def gen_giant()
-  puts "What kind of giant?"
-end
-
-def gen_devil
-  puts "It'll make a devil here."
-end
-
-def gen_undead
-  puts "It'll make an undead here."
+def gen_monster_by_monster_type(monster_type)
+  monster_type = Object.const_get(monster_type.upcase)
+  send("gen_monster", monster_type)
 end

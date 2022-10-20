@@ -26,7 +26,7 @@ class NPC
   end
 end
 
-dragonborn_female = NPC.new(DRAGONBORN_FEMALE.sample, DRAGONBORN_MALE, DRAGONBORN_SURNAME.sample, STAT_BLOCK)
+dragonborn_female = NPC.new(DRAGONBORN_FEMALE.sample, DRAGONBORN_MALE.sample, DRAGONBORN_SURNAME.sample, STAT_BLOCK)
 # dragonborn_male = NPC.new()
 # dwarf_female = NPC.new()
 # dwarf_male = NPC.new()

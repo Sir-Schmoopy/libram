@@ -11,3 +11,10 @@ When using tables and lists, my preference is a 50/50 split between rolling and 
 You can navigate to the tables if you want to be choosy, but right now you can use the `engine.rb` to roll most of what you might need in a (hopefully) quicker fashion.
 
 use 'plz' in the command line to get instant outputs. 
+
+## TO-DO
+
+- Add Goliath NPC Names
+- Finish Tabaxi NPC Names
+- Add Book names to the item generators
+- API for generating images w/ character descriptors
